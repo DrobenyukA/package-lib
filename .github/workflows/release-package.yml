@@ -13,8 +13,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm test
+          
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Validate code (lint)
+        run: yarn lint
 
   publish-gpr:
     needs: build
@@ -32,9 +36,6 @@ jobs:
       
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-
-      - name: Validate code (lint)
-        run: yarn lint
 
       - name: Build
         run: yarn build
