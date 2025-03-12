@@ -1,6 +1,6 @@
 # Package library instructions
 
-1. Create buildable library [commit]()
+See [GitHub docs](https://docs.github.com/en/packages/quickstart) for more info
 
 
 ## Local development

@@ -42,6 +42,7 @@ jobs:
         run: yarn build
 
       - name: Release new version
-        run: yarn publish
+        # run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: yarn publish
