@@ -1,11 +1,14 @@
 {
-  "name": "package-lib",
+  "name": "@drobenyuka/package-lib",
   "version": "0.0.0",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
@@ -17,6 +20,7 @@
   "files": [
     "/dist"
   ],
+  "author": "Andriy Drobenyuk",
   "repository": {
     "type": "git",
     "url": "git@github.com:DrobenyukA/package-lib.git"
