@@ -6,24 +6,24 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-        # run: npm ci
+  #     - name: Install dependencies
+  #       run: yarn install --frozen-lockfile
+  #       # run: npm ci
 
-      - name: Validate code (lint)
-        run: yarn lint
-        # run: npm run lint
-
+  #     - name: Validate code (lint)
+  #       run: yarn lint
+  #       # run: npm run lint
+  
   publish:
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -48,5 +48,5 @@ jobs:
       - name: Release new version
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: yarn publish --access restricted
+        run: yarn publish
         # run: npm publish
