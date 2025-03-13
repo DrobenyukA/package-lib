@@ -17,6 +17,10 @@
   "files": [
     "/dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:DrobenyukA/package-lib.git"
+  },
   "publishConfig": {
     "@DrobenyukA:registry": "https://npm.pkg.github.com"
   },
