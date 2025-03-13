@@ -26,7 +26,7 @@
     "url": "git@github.com:DrobenyukA/package-lib.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@drobenyuka"
+    "registry": "https://npm.pkg.github.com/drobenyuka"
   },
   "scripts": {
     "dev": "vite",
