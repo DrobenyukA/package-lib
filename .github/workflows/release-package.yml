@@ -21,7 +21,7 @@ jobs:
   #     - name: Validate code (lint)
   #       run: yarn lint
   #       # run: npm run lint
-  
+
   publish:
     # needs: build
     runs-on: ubuntu-latest
@@ -48,5 +48,5 @@ jobs:
       - name: Release new version
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: yarn publish
+        run: yarn publish --registry https://npm.pkg.github.com --verbose
         # run: npm publish
