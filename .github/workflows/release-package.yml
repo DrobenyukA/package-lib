@@ -15,12 +15,12 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        # run: yarn install --frozen-lockfile
-        run: npm ci
+        run: yarn install --frozen-lockfile
+        # run: npm ci
 
       - name: Validate code (lint)
-        # run: yarn lint
-        run: npm run lint
+        run: yarn lint
+        # run: npm run lint
 
   publish:
     needs: build
@@ -38,15 +38,15 @@ jobs:
           scope: '@drobenyuk'
       
       - name: Install dependencies
-        # run: yarn install --frozen-lockfile
-        run: npm ci
+        run: yarn install --frozen-lockfile
+        # run: npm ci
 
       - name: Build
-        # run: yarn build
-        run: npm run build
+        run: yarn build
+        # run: npm run build
 
       - name: Release new version
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        # run: yarn publish --access restricted
-        run: npm publish
+        run: yarn publish --access restricted
+        # run: npm publish
