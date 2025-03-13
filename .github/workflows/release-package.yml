@@ -15,12 +15,14 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        # run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Validate code (lint)
-        run: yarn lint
+        # run: yarn lint
+        run: npm run lint
 
-  publish-gpr:
+  publish:
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -33,19 +35,18 @@ jobs:
           always-auth: true
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-          scope: '@drobenyuka'
+          scope: '@drobenyuk'
       
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        # run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Build
-        run: yarn build
-
-      - name: Inject token
-        run: echo "//npm.pkg.github.com/:_authToken=${{secrets.GITHUB_TOKEN}}" >> ~/.npmrc
+        # run: yarn build
+        run: npm run build
 
       - name: Release new version
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: yarn publish --access restricted
+        # run: yarn publish --access restricted
+        run: npm publish
