@@ -1,6 +1,6 @@
 {
   "name": "@DrobenyukA/package-lib",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -23,10 +23,10 @@
   "author": "Andriy Drobenyuk",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ /package-lib.git"
+    "url": "git+https://github.com/DrobenyukA/package-lib.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/@DrobenyukA"
   },
   "scripts": {
     "dev": "vite",
