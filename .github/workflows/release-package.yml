@@ -47,6 +47,6 @@ jobs:
 
       - name: Release new version
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         # run: yarn publish --registry https://npm.pkg.github.com --verbose
         run: npm publish
